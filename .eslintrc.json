@@ -4,6 +4,8 @@
         "es2021": true
     },
     "extends": [
+        "eslint:recommended",
+        "next",
         "plugin:react/recommended",
         "airbnb",
         "prettier"
@@ -12,19 +14,33 @@
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": "latest",
+        "ecmaVersion": 6,
         "sourceType": "module"
     },
-    "plugins": [
-        "react"
-    ],
+    "plugins": ["react", "react-hooks"],
     "rules": {
         "arrow-body-style": 0,
         "react/react-in-jsx-scope": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "react/function-component-definition": 0,
+        "react/function-component-definition": "off",
         "import/prefer-default-export": "off",
         "react/prop-types": "off",
-        "react/jsx-props-no-spreading": "off"
+        "react/jsx-props-no-spreading": "off",
+        "max-len": [
+            "error",
+            {
+                "code": 100,
+                "ignoreStrings": true,
+                "ignoreTemplateLiterals": true,
+                "ignoreRegExpLiterals": true
+            }
+        ],
+        "no-console": ["warn", { "allow": ["warn", "error"] }],
+
+        "react-hooks/rules-of-hooks": "error",
+        "no-shadow": "off",
+        "indent": ["error", 2],
+        "object-curly-spacing": ["error", "never", { "arraysInObjects": true }],
+        "no-multi-spaces": ["error", { "ignoreEOLComments": false }]
     }
 }
